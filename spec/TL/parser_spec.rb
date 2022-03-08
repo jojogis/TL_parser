@@ -8,7 +8,7 @@ RSpec.describe TL::Parser do
   end
 
   it "can get offers from sanpriboy" do
-    result = TL::Parser.load_offers(url: "https://sanpriboy.ru",
+    result = TL::Parser.load_offers("https://sanpriboy.ru",
                                     start_date: Date.today.next_month,
                                     finish_date: Date.today.next_month.next_day)
     expect(result).to be_a_kind_of(Hash)
@@ -20,7 +20,7 @@ RSpec.describe TL::Parser do
   end
 
   it "can get offers from admiral-klub" do
-    result = TL::Parser.load_offers(url: "https://admiral-klub.ru",
+    result = TL::Parser.load_offers("https://admiral-klub.ru",
                                     start_date: Date.today.next_month,
                                     finish_date: Date.today.next_month.next_day)
     expect(result).to be_a_kind_of(Hash)
@@ -32,7 +32,7 @@ RSpec.describe TL::Parser do
   end
 
   it "can get offers from dona-rosa" do
-    result = TL::Parser.load_offers(url: "https://dona-rosa.ru",
+    result = TL::Parser.load_offers("https://dona-rosa.ru",
                                     start_date: Date.today.next_month,
                                     finish_date: Date.today.next_month.next_day)
     expect(result).to be_a_kind_of(Hash)
@@ -44,7 +44,7 @@ RSpec.describe TL::Parser do
   end
 
   it "can get offers from ghkandt" do
-    result = TL::Parser.load_offers(url: "https://ghkandt.com/",
+    result = TL::Parser.load_offers("https://ghkandt.com/",
                                     start_date: Date.today.next_month,
                                     finish_date: Date.today.next_month.next_day)
     expect(result).to be_a_kind_of(Hash)
@@ -56,7 +56,7 @@ RSpec.describe TL::Parser do
   end
 
   it "it returns warning when input nights is zero" do
-    result = TL::Parser.load_offers(url: "https://admiral-klub.ru",
+    result = TL::Parser.load_offers("https://admiral-klub.ru",
                                     start_date: Date.today.next_month,
                                     finish_date: Date.today.next_month)
     expect(result).to be_a_kind_of(Hash)
